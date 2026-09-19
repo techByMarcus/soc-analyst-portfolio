@@ -1,112 +1,35 @@
-# SOC Analyst Labs
+# SOC Analyst Portfolio
 
-This repository contains hands-on SOC (Security Operations Center) investigations focused on real-world attack scenarios, log analysis, and threat detection.
+Hands-on security investigations completed in controlled lab and training environments.
 
----
+This repository documents how I approach common SOC alerts: establish the question, review the available evidence, analyze the pattern, make an assessment, note uncertainty, and recommend the next response step.
 
-## 🔍 Lab 1: Brute Force Attack Investigation
+The work shown here is training and lab experience. It is not presented as production SOC employment.
 
-### 🎯 Objective
-Identify and analyze repeated failed login attempts to detect potential brute force activity.
+## Published Case Studies
 
-### 🛠 Tools Used
-- Splunk (lab environment)
-- Windows Event Logs
+| Case | Focus | Tools / Concepts |
+| --- | --- | --- |
+| [Brute Force Authentication Investigation](./cases/brute-force-authentication/README.md) | Repeated failed logins, source analysis, authentication triage | Splunk, Windows Event Logs |
+| [Suspicious Login / Potential Account Compromise](./cases/suspicious-login/README.md) | Unusual login timing and source, behavioral analysis | SIEM, log correlation, incident triage |
+| [Phishing Email Investigation](./cases/phishing-email/README.md) | Sender validation, social engineering, link analysis | Email analysis, URL inspection, phishing response |
 
-### 🧪 Scenario
-A high volume of failed login attempts was observed within a short period. The goal was to determine whether the activity represented a brute force attack.
+## Investigation Approach
 
-### 🔎 Investigation Steps
-- Reviewed authentication logs for failed login events  
-- Identified repeated login attempts from a single IP address  
-- Correlated timestamps to identify attack patterns  
-- Analyzed affected user accounts  
+Each case is written to show the analyst decision process rather than only list lab steps.
 
-### 🚨 Findings
-- Multiple failed login attempts detected  
-- Activity originated from a single IP address  
-- Pattern consistent with brute force behavior  
+The case studies separate:
 
-### 🛡 Response / Mitigation
-- Recommend blocking the source IP address  
-- Implement account lockout policies  
-- Enable multi-factor authentication (MFA)  
+- what evidence was actually available in the lab
+- what conclusion the evidence supported
+- what remained uncertain
+- what response I would recommend
+- what additional telemetry I would review in a production environment
 
-### 📌 Skills Demonstrated
-- Log analysis  
-- Threat detection  
-- Incident investigation  
-- SIEM usage (Splunk)  
+## Additional Security Work
 
----
+My broader public portfolio includes network-security labs, IDS/SIEM work, incident-response exercises, vulnerability assessment, and GRC projects.
 
-## 🔍 Lab 2: Suspicious Login Activity
+Portfolio: https://techbymarcus.github.io/aboutMarcus/
 
-### 🎯 Objective
-Detect and analyze unusual login behavior that may indicate unauthorized access.
-
-### 🛠 Tools Used
-- SIEM (lab environment)
-- Log analysis tools
-
-### 🧪 Scenario
-Login activity was detected outside of normal operating hours. The objective was to determine whether the activity was legitimate or potentially malicious.
-
-### 🔎 Investigation Steps
-- Reviewed login timestamps and user activity  
-- Identified logins occurring outside normal hours  
-- Investigated source IP address and location  
-- Compared activity against baseline user behavior  
-
-### 🚨 Findings
-- Login attempts occurred at unusual times  
-- Access originated from an unfamiliar location  
-- Activity inconsistent with normal user behavior  
-
-### 🛡 Response / Mitigation
-- Recommend verifying user activity  
-- Enforce MFA  
-- Monitor account for further suspicious behavior  
-
-### 📌 Skills Demonstrated
-- Behavioral analysis  
-- Threat detection  
-- Log correlation  
-- Incident triage  
-
----
-## 🔍 Lab 3: Phishing Email Investigation
-
-### 🎯 Objective
-Analyze a suspicious email to determine whether it is a phishing attempt.
-
-### 🛠 Tools Used
-- Email header analysis
-- URL inspection
-- Basic threat analysis techniques
-
-### 🧪 Scenario
-A user reported receiving an email requesting urgent account verification. The message included a link and appeared to come from a trusted source.
-
-### 🔎 Investigation Steps
-- Reviewed sender email address for spoofing indicators  
-- Analyzed email content for urgency and social engineering tactics  
-- Inspected embedded links for suspicious or mismatched domains  
-- Checked for unusual formatting, spelling, or grammar issues  
-
-### 🚨 Findings
-- Sender address was suspicious and did not match legitimate domain  
-- Email contained urgent language designed to pressure the user  
-- Link redirected to a non-legitimate website  
-
-### 🛡 Response / Mitigation
-- Advised user not to click the link  
-- Reported email as phishing  
-- Recommended security awareness training  
-- Suggested implementing email filtering rules  
-
-### 📌 Skills Demonstrated
-- Phishing detection  
-- Email analysis  
-- Threat identification  
-- Incident response  
+GitHub: https://github.com/techByMarcus
