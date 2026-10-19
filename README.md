@@ -1,35 +1,32 @@
-# SOC Analyst Portfolio
+# Security Operations | Investigation Case Studies
 
-Hands-on security investigations completed in controlled lab and training environments.
+**Three documented SOC investigations · Authentication analysis · Phishing triage · Evidence-based escalation**
 
-This repository documents how I approach common SOC alerts: establish the question, review the available evidence, analyze the pattern, make an assessment, note uncertainty, and recommend the next response step.
+> **Recruiter quick view:** I analyzed suspicious activity in controlled training environments, documented the evidence and uncertainty, and recommended proportionate response actions. These are **hands-on labs, not professional SOC incidents**.
 
-The work shown here is training and lab experience. It is not presented as production SOC employment.
+## Start here — three investigations
 
-## Published Case Studies
+| Case study | Finding / analyst decision | Evidence reviewed |
+|---|---|---|
+| **[Repeated failed authentication → brute-force triage](cases/brute-force-authentication/README.md)** | Pattern consistent with repeated password guessing; escalation recommended after checking legitimate sources | Windows authentication events, timestamps, account and source patterns in Splunk |
+| **[Unusual successful login → potential account compromise](cases/suspicious-login/README.md)** | Suspicious; requires user verification, **not** a confirmed compromise | Login timing, source location, expected behavior |
+| **[Phishing message → suspicious sender and destination](cases/phishing-email/README.md)** | Phishing determination based on multiple indicators | Sender/domain comparison, urgency cues, embedded-link destination |
 
-| Case | Focus | Tools / Concepts |
-| --- | --- | --- |
-| [Brute Force Authentication Investigation](./cases/brute-force-authentication/README.md) | Repeated failed logins, source analysis, authentication triage | Splunk, Windows Event Logs |
-| [Suspicious Login / Potential Account Compromise](./cases/suspicious-login/README.md) | Unusual login timing and source, behavioral analysis | SIEM, log correlation, incident triage |
-| [Phishing Email Investigation](./cases/phishing-email/README.md) | Sender validation, social engineering, link analysis | Email analysis, URL inspection, phishing response |
+## How I investigate
 
-## Investigation Approach
+**Alert/question → available evidence → correlated observations → assessed risk → recommended response → remaining unknowns.**
 
-Each case is written to show the analyst decision process rather than only list lab steps.
+The case reports distinguish observations from hypotheses. For example, an unusual source alone does not prove account compromise; it must be checked against authentication history, approved infrastructure, and user context.
 
-The case studies separate:
+## Evidence a reviewer can inspect
 
-- what evidence was actually available in the lab
-- what conclusion the evidence supported
-- what remained uncertain
-- what response I would recommend
-- what additional telemetry I would review in a production environment
+- [Brute-force case: observation and escalation reasoning](cases/brute-force-authentication/README.md#analysis)
+- [Suspicious-login case: why evidence does not prove compromise](cases/suspicious-login/README.md#analyst-assessment)
+- [Phishing case: sender, link, and social-engineering indicators](cases/phishing-email/README.md#evidence-reviewed)
+- [Related authentication investigation with video walkthrough](https://github.com/techByMarcus/real-world-log-investigation)
 
-## Additional Security Work
+**Scope:** Controlled training investigations. The case reports do not include original screenshot or log attachments for every observation; I do not present reconstructed artifacts as original evidence.
 
-My broader public portfolio includes network-security labs, IDS/SIEM work, incident-response exercises, vulnerability assessment, and GRC projects.
+**Relevant strengths:** SOC alert triage, Splunk/Windows event-log concepts, documentation, analytical judgment, escalation decisions.
 
-Portfolio: https://techbymarcus.github.io/aboutMarcus/
-
-GitHub: https://github.com/techByMarcus
+[Professional portfolio](https://techbymarcus.github.io/aboutMarcus/) · [Other public work](https://github.com/techByMarcus)
